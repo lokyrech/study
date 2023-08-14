@@ -15,6 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<swagger.version>3.0.0</swagger.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,7 +27,20 @@
 			<artifactId>swagger-codegen-cli</artifactId>
 			<version>3.0.19</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -65,7 +79,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/swagger/dog-api.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/swagger/resident-api.yaml</inputSpec>
 							<language>spring</language>
 							<library>spring-boot</library>
 							<apiPackage>project.api</apiPackage>

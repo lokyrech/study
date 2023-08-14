@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: OpenApi Contract for CRUD of residents
+  version: 1.0.0
+paths:
+  /resident:
+    get:
+      summary: Get a single resident
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schema/Resident'
+      response:
+        200:
+          description: Resident found with success
+        400:
+          description: Bad Request
+        404:
+          description: Not Found
+components:
+  schemas:
+    Resident:
+      type: object
+      properties:
+        apartNumber:
+          type: integer
+          description: Number of the apartment
+        floor:
+          type: integer
+          description: Floor
+        block:
+          type: integer
+          description: Block
+        name:
+          type: string
+          description: Name
